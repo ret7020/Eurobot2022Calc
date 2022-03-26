@@ -21,3 +21,10 @@ body{
 result{
     display: none;
 }
+#rules_link{
+    text-decoration: none;
+    color: lime;
+}
+#rules_link:hover{
+    color: #11ce11;
+}
