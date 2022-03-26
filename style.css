@@ -1,0 +1,23 @@
+.main_block{
+    margin:0 auto;
+    width:500px;
+    height:200px;
+}
+#artifact_in, #predicted{
+    width: 50px;
+}
+#fine{
+    width: 187px;
+}
+input{
+    margin-bottom: 10px;
+}
+body{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('map.jpg');
+    background-size: cover;
+    color: white;
+    font-size: 20px;
+}
+result{
+    display: none;
+}

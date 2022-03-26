@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eurobot-2022 Calc</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="main_block">
+        <h1>Eurobot 2022 Calc</h1>
+        <container>
+            <label for="fine">Штраф:</label>
+            <input type="number" name="fine" id="fine" placeholder="100">
+            <br>
+            <label for="artifact_in">Образцов внутри(<b>x5</b>):</label>
+            <input type="number" name="artifact_in" id="artifact_in" placeholder="3">
+            <br>
+            <label for="statue_0">Статуэтка на пьедестале(<b>2</b>)</label>
+            <input type="checkbox" name="statue_0" id="statue_0">
+            <br>
+
+            <label for="statue_1">Статуэтки нет на пьедестале в конце(<b>5</b>)</label>
+            <input type="checkbox" name="statue_1" id="statue_1">
+            <br>
+
+            <label for="statue_2">Другая статуэтка на пьедестале в конце(<b>10</b>)</label>
+            <input type="checkbox" name="statue_2" id="statue_2">
+
+            <label for="statue_3">Другая статуэтка в витрине в конце(<b>15</b>)</label>
+            <input type="checkbox" name="statue_3" id="statue_3">
+            <br>
+            <label for="vitrin_0">У команды есть витрина(<b>2</b>)</label>
+            <input type="checkbox" name="vitrin_0" id="vitrin_0">
+            <br>
+
+            <label for="vitrin_1">Витрина активирована в конце(<b>5</b>)</label>
+            <input type="checkbox" name="vitrin_1" id="vitrin_1">
+            
+            <br>
+
+            <label for="finish">Все  роботы в лагере/на месте раскопок(<b>20</b>)</label>
+            <input type="checkbox" name="finish" id="finish">
+            
+            <br>
+            <label for="predicted">Предсказание:</label>
+            <input type="number" name="predicted" id="predicted" placeholder="0">
+            
+            <br>
+            <button onclick="calc()">
+                Подсчёт
+            </button>
+
+            <result>
+                Результат: 
+            </result>
+            
+            
+
+
+            
+        </container>
+    </div>
+</body>
+<script src="calculate.js"></script>
+</html>
