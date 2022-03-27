@@ -1,7 +1,7 @@
-let res = 0;
-    let final_str = "";
-    function calc(){
-        //alert(0);
+function calc(){
+        //Clear res every function call 
+        let res = 0;
+        let final_str = "";
         
         res += parseInt(document.getElementById("artifact_in").value) * 5;
         final_str += "5 * " + document.getElementById("artifact_in").value + " ";
@@ -46,15 +46,22 @@ let res = 0;
         }
         
         console.log(res);
-        let delta = Math.abs(parseInt(document.getElementById("predicted").value)  - res);
-        console.log(delta);
-        let bonus = 0.3 * res - delta;
-        res += bonus
-        res = Math.round(res) + 1;
-        console.log(res);
-        final_str += "+ " + bonus + " + 1";
+        let bonus = 0;
+        if (document.getElementById("predicted").value != ""){
+            let delta = Math.abs(parseInt(document.getElementById("predicted").value)  - res);
+            console.log(delta);
+            bonus = Math.round(0.3 * res - delta);
+            res += bonus
+            res += 1;
+            console.log(res);
+            final_str += "+ " + bonus + " + 1";
+        }else{
+            res += 1;
+            final_str += "+ " + bonus + " + 1";
+        }
+        
 
 
         document.getElementsByTagName("result")[0].style.display = "block";
-        document.getElementsByTagName("result")[0].innerHTML = "Результат: <b style='color: #00dd8a'>" + res + " </b>баллов<br>" + final_str;
+        document.getElementsByTagName("result")[0].innerHTML = "Результат: <b style='color: #00dd8a'>" + res + " </b>баллов<br>Без бонуса(и 1 балла): <b style='color: #c1dd00'>" + (res - bonus - 1) + "</b> баллов<br>Бонус: <b style='color: #00bedd'>" + bonus + "</b> балла<br>" + final_str;
     }
