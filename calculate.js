@@ -40,10 +40,45 @@ function calc(){
             final_str += "+ 20 ";
         }
 
-        if (parseInt(document.getElementById("fine").value) != 0 && document.getElementById("fine").value != ""){
-            res -= parseInt(document.getElementById("fine").value);
-            final_str += " - " + document.getElementById("fine").value;
+        if (document.getElementById("artifact_cross").checked)
+        {
+            if (document.getElementById("artifact_opened").value != ""){
+                res += parseInt(document.getElementById("artifact_opened").value) * 5;
+                final_str += "+ 5 * " + document.getElementById("artifact_opened").value + " "
+            }
         }
+
+        if (document.getElementById("obraz_raspr").value != ""){
+            res += parseInt(document.getElementById("obraz_raspr").value);
+            final_str += "+ " + document.getElementById("obraz_raspr").value + " "
+        }
+
+        if (document.getElementById("obraz_in_lag").value != ""){
+            res += parseInt(document.getElementById("obraz_in_lag").value);
+            final_str += "+ " + document.getElementById("obraz_in_lag").value + " "
+        }
+
+        if (document.getElementById("obraz_in_lag_sorted").value != ""){
+            res += parseInt(document.getElementById("obraz_in_lag_sorted").value);
+            final_str += "+ " + document.getElementById("obraz_in_lag_sorted").value + " "
+        }
+
+        if (document.getElementById("obraz_in_gal").value != ""){
+            res += parseInt(document.getElementById("obraz_in_gal").value) * 3;
+            final_str += "+ 3 * " + document.getElementById("obraz_in_gal").value + " "
+        }
+
+        if (document.getElementById("obraz_in_gal_sorted").value != ""){
+            res += parseInt(document.getElementById("obraz_in_gal_sorted").value) * 3;
+            final_str += "+ 3 * " + document.getElementById("obraz_in_gal_sorted").value + " "
+        }
+
+
+
+        
+
+        
+        
         
         console.log(res);
         let bonus = 0;
@@ -51,6 +86,9 @@ function calc(){
             let delta = Math.abs(parseInt(document.getElementById("predicted").value)  - res);
             console.log(delta);
             bonus = Math.round(0.3 * res - delta);
+            if (bonus < 0){
+                bonus = 0;
+            }
             res += bonus
             res += 1;
             console.log(res);
@@ -59,6 +97,15 @@ function calc(){
             res += 1;
             final_str += "+ " + bonus + " + 1";
         }
+
+        if (parseInt(document.getElementById("fine").value) != 0 && document.getElementById("fine").value != ""){
+            //Do fine calc after bonus calculating
+            res -= parseInt(document.getElementById("fine").value);
+            final_str += " - " + document.getElementById("fine").value;
+        }
+
+        
+        
         
 
 

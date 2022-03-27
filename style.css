@@ -3,7 +3,7 @@
     width:500px;
     height:200px;
 }
-#artifact_in, #predicted{
+#artifact_in, #predicted, #artifact_opened, #obraz_raspr, #obraz_in_lag, #obraz_in_lag_sorted, #obraz_in_gal_sorted, #obraz_in_gal{
     width: 50px;
 }
 #fine{
